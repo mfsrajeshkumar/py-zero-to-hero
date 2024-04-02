@@ -1,0 +1,35 @@
+Q1.
+what is suite here
+The if statement¶
+The if statement is used for conditional execution:
+
+if_stmt ::=  "if" assignment_expression ":" suite
+             ("elif" assignment_expression ":" suite)*
+             ["else" ":" suite]
+
+In Python, a "suite" refers to a group of statements that are indented under a certain control structure or block.
+
+For the if statement syntax you provided:
+if condition:
+    # This is a suite of statements
+    statement1
+    statement2
+    # More statements...
+elif another_condition:
+    # Another suite of statements
+    statement3
+    statement4
+    # More statements...
+else:
+    # Yet another suite of statements
+    statement5
+    statement6
+    # More statements...
+Here, each suite is a block of code associated with a particular condition in the if statement. The suite consists of one or more statements that are executed if the associated condition evaluates to True. The indentation (typically four spaces or a tab) is crucial in Python because it defines the boundaries of the suite. The indentation level determines which statements belong to which suite and which control structure they are associated with.
+=================================================================================================
+
+https://docs.python.org/3/reference/compound_stmts.html#
+
+
+
+
