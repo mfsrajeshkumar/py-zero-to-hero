@@ -30,6 +30,7 @@ Here, each suite is a block of code associated with a particular condition in th
 
 https://docs.python.org/3/reference/compound_stmts.html#
 
-
+How to Write Beautiful Python Code With PEP 8:
+https://realpython.com/python-pep8/
 
 
