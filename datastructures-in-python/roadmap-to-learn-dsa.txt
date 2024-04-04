@@ -1,0 +1,5 @@
+--> Learn a language first (basics) and other required concept can be learned later on go.
+--> Learn dsa basic and implement
+--> Understand the built in libraries overview means  you know how to use them, and how  they work.
+--> Learn concepts and start solving problem on that concept
+--> Do practice and learning together

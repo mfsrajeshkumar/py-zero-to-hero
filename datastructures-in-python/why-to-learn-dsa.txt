@@ -1,0 +1,7 @@
+Q1. What is DSA?
+DSA stands for data structures and algorithms
+
+Q2. Why to learn dsa?
+--> To become a good software developer
+--> It will help to understand problems easily and categorized them
+--> Required  skills in real world scenarios 
