@@ -1,0 +1,8 @@
+# Python comments
+# This is a variable
+a = 5
+
+# --> single line comment
+"""  """ --> Multi line comment
+
+

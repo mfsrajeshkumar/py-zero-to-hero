@@ -1,0 +1,8 @@
+# id function in python is used to know the memory address
+x = 5
+id(x)
+140166123678128
+
+x = 45
+print(id(x))
+140166123679408

@@ -1,0 +1,17 @@
+# Variables are place holders for storing data
+
+x = 10
+x(variable_name)
+= (assignment operator)
+10 (value to be assigned)
+
+
+#Naming a variable:
+Rules for naming python variables:
+--> A variable name  must start with  letter or the underscore character
+--> A variable name cannot strat with number 
+--> A variable name can only contain alpha-numeric characters and undersores  (A-z, 0-9, and _)
+--> variable names are case-sensitive(age, Age and AGE are three different variables)
+--> Inbuilt keywords shoult not be used as identifiers
+
+help("keywords")

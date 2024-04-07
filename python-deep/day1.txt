@@ -1,1 +1,19 @@
 # Learned about print, Numbers(Decimal, Floating Point) and string
+# comments, variables(naming conventions)
+
+So, it doesn't matter how many spaces you keep right before and after the comma — print() 
+only adds a single space in the output.
+
+Every use of \n adds a newline. So, if we use another \n, it will add a 
+space between the separated lines.
+
+Q1. Write a program to display Hey and How are you in two different 
+lines using a single print() statement.
+
+print("Hey\nHow are you")
+
+Pyrhon is a case sensitive language so print and Print are not same.
+
+In Python, indentation has a special meaning. So, if we add unnecessary spaces at the beginning, 
+we will get an error. For example,
+        print("Hello")  # Indentation Error

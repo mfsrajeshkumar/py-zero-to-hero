@@ -1,0 +1,238 @@
+#####Loops in python #####
+##Intro to Python Loops ##
+1. While 
+2. For
+
+print("I am the best")
+print("I am the best")
+print("I am the best")
+print("I am the best")
+print("I am the best")
+print("I am the best")
+
+##### while loop #####
+while Condition:
+    Body of while (also known as suite)
+
+Three important aspects of while loop:
+1. Initializing value
+2. Loop condition
+3. Updating value
+
+# Initialize
+i = 1
+
+# loop condition
+while i <= 6:
+    # Inside body
+    print("I am the best")
+
+    # update value
+    i = i + 1 # i += 1
+
+
+##### Print Numbers using python loop #####
+
+# Print all numbers from 1 to 10 using loop
+
+# Initializing 
+i = 1
+
+# Condition
+while i <= 10:
+
+    # Print value
+    print(i, end=" ")
+
+    # Update Value
+    i += 1
+
+
+# Print Even Numbers in Given Range
+# Print all even numbers from 0 to 10
+
+i = 0 
+while i <= 10:
+    if (i % 2 == 0):
+        print(i, end=" ")
+    i += 1
+
+# Print Sum of Numbers in given Range
+# Print sum of all numbers from 1 to 10
+
+# Initialization
+i = 1
+add = 0
+ 
+# loop condition
+while i <= 10:
+    add += i
+
+    # Update
+    i += 1
+print(add)
+
+
+##### Range Function #####
+--> range() function allows users to generate series of numbers
+--> it is iterable as well
+
+Ex# 0, 1, 2, 3, 4, 5...
+range(n)  --> It will give all the positive integers from 0 to N
+range(start, end, jump)
+(by default start=0, end=n, jump=1)
+
+range(5) # Here start is 0 and jump is 1
+list(range(5)) #[0, 1, 2, 3, 4] so in range function start is inclusive and end is exclusive 
+that's why 5 is not in list
+
+#by default jump here will be 1
+# Start is included and end is excluded
+list(range(1, 5))
+list(range(2, 5))
+list(range(1, 10, 2))
+
+list(range(10, 1, 1))
+jump is positive 1 so there is no range 10 to 1 so it will return empty list
+
+
+list(range(10, 1, -1))
+jump is positive -1 so there is a range 10 to 1 so it will return [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+
+list(range(-1, 10)) [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+list(range(10, 0, -2)) [10, 8, 6, 4, 2]
+
+
+##### Iterator Iterable and Iteration ######
+classroom students(iterable), who's giving choclates to all students one by one (iterator) and delivering 
+choclates to the all students one by one this process is known as iteration
+
+for iterator in iterable:
+    for body
+
+# i: iterable
+# range(): iterable
+
+for i in range(1, 11):
+    print(i, end="\n")
+
+#####Print multiplication table of 5######
+n = int(input())
+
+for i in range(1, 11):
+    print(i * n)
+
+#####Print pattern1 #####
+n = 4
+
+# # # #
+# # # #
+# # # #
+# # # #
+
+n = 3
+
+# # #
+# # #
+# # #
+
+n = int(input())
+for i in range(n):
+    print("#" * n)
+
+
+or
+for i in range(n):
+    for j in range(n):
+        print("#", end=" ")
+
+#####Print pattern2 #####
+
+n = 4
+
+#
+# #
+# # # 
+# # # # 
+
+n = 3
+#
+# #
+# # #
+
+n = int(input())
+for i in range(n):
+    print("# ", i + 1)
+or
+for i in range(n):
+    for j in range(i + 1):
+        print("#", end=" ")
+
+
+##### Break, Continue and Pass#####
+--> These statements are used to alter the flow of a program
+--> Break: Breaks the flow of program once this condition is hit
+--> Continue: It skips that particular iteration
+--> pass: To avoid syntax error
+
+for i in range(1, 10):
+    pass
+
+for i in range(1, 10):
+    if i == 5:
+        continue
+    print(i)
+
+for i in range(1, 10):
+    if i == 5:
+        break
+    print(i)
+
+i = 1
+while i < 10:
+    if i == 5:
+        break
+    print(i)
+
+    i += 1
+
+
+
+Q1. Triangle pattern
+Q2. Prime finder
+Q3. op: 69
+for x in range(10):
+       if x == 6:
+           print(x,end="")
+print(x)
+
+Q4. 
+There are a couple of issues in the provided code:
+In the line print(" " * n - i, end = ""), you're trying to subtract i from a string multiplied by n. 
+This operation is not supported in Python. You should enclose the expression n - i within parentheses
+ to perform subtraction before the string repetition.
+In the inner loop for j in range(1, 2 * i):, the range should start from 1 and end at 2 * i + 1 
+to include 2 * i.
+Here's the corrected version of the code:
+
+def star_pattern(n):
+    '''input: n = An Integer value defines number of rows
+       output: print triangle star pattern'''
+    # YOUR CODE GOES HERE
+    for i in range(n):
+        print(" " * (n - i), end = "")  # Corrected line
+        for j in range(1, 2 * i + 2):   # Corrected line
+            print("*" * j, end="")
+        print()  # Added to move to the next line after each row
+
+# Example usage:
+star_pattern(5)
+With these corrections, the function should now correctly print a triangle
+ star pattern with the specified number of rows.
+
+
+
+
+

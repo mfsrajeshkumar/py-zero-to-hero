@@ -1,0 +1,20 @@
+-infinity-------------0(zeoro)-----------+infinity
+
+#Data Types in python
+1. Integers
+2. Floats
+3. Booleans
+4. Strings
+5. None
+
+
+type is a function in python to check data type of any object
+number = 10
+float_val = 2.5
+check = True
+name = "raj"
+
+# None means nothing no value
+
+Q1. What is a literal?
+Q2. What is a suite?

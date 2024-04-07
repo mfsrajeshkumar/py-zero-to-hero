@@ -1,0 +1,67 @@
+# Operators
+# Operands
+
+# Operators + Operands = Expression
+An operator ina programming language is a symbol that to perform specific mathematical, 
+relational or logical operation and produce original result.
+x + y (Here x and y are operands and + is an operator)
+
+
+
+#####Arithmetic Operators#####
+1. Addition(+)
+2. Subtraction(-)
+3. Division(/) #Division operator always yield float value 5/3 == 1.6666..7
+3. modulo division(%) (mod)  #It will give remainder
+4. multiplication(*)
+5. Floor division(//) In floor division, the result is floored to the nearest smallest integer
+6. To the power(**) To the power accepts two values base and power (2, 3) == 2*2*2
+
+string concatenation
+first = "Raj"
+last = "Yadav"
+print(first + last) # Raj Yadav
+
+
+#####Comparison Operators#####
+1. ==(True if equal)
+2. !=(True if not equal)
+3. <(Less than) & >(Greater than)
+4. <=(Less than or equal to) & >=(Greater than or equal to)
+Note: Comparison operators ca be used to compare values in mathematical terms.
+
+#####Assignment Operators#####
+1. =
+2. -= 
+3. +=
+4. /=
+5. */ 
+
+# a= a + 3 is same as a += 3
+
+#####Logical Operators#####
+1. and
+2. or 
+3. not --> Just for negate the result not True => False, not False => True
+
+#####Special operators#####
+1. in operator(Membership Operator) --> in operator tells you if an object is part of other object or not.
+2. is operator
+
+name = "Rajesh yadav"
+"Raj" in name --> True
+"jqs" in name --> False
+
+
+is operator tells you if both the object are at same memory location?
+a = 5
+b = 5
+print(id(a), id(b)) 
+a is b It will give True if both a and b's memory addresses are same else False
+
+
+round(float_value, number_of_decimal_point)
+round(10.01233, 2) # It will return 10.01
+The round() function returns a floating point number that is a rounded version of the specified number,
+with the specified number of decimals.
+The default number of decimals is 0, meaning that the function will return the nearest integer.

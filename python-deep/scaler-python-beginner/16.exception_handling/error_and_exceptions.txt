@@ -1,0 +1,57 @@
+#####Errors and Exceptions in Python#####
+--> When we write a faulty code the execution of program may stop due to the Errors
+--> There can be some places where exceptions can be caused
+--> Errors are caused by wrong syntax
+--> Exceptions are logic based wherin synatx is right but logic isn't Ex# Zero Division Error
+
+Example of errors:
+1. SyntaxError
+2. NameError
+3. TypeError
+4. FileNotFoundError
+5. IndentationError
+6. ZeroDivisionError
+
+To know all errors
+print(dir(__builtins__))
+
+##### Try and Except #####
+try: This block handles the error in your code if any of it exists.
+except: This block gives the output that you want to show if your code is faulty.
+
+Ex#
+a = 5
+b = 0
+# put the suspect code in try block
+try:
+    print(a/b)
+except:
+    print("there is an error taht you might want to look for")
+print("hello rajesh")
+
+#####Except block #####
+--> You can tell the kind of error using Exception
+a = 5
+b = 0
+# put the suspect code in try block
+try:
+    print(a/b)
+except Exception as e:
+    print("error..", e)
+print("hello Rajesh")
+
+##### Finally in python #####
+--> This block will be executed in any case
+--> It is helpful when you want to de-allocate resources
+--> Like closing a file, or db connection
+
+Ex# 
+a = 5
+b = 2
+try: 
+    print("open file")
+    print(a/b)
+except Exception as e:
+    print("Error", e)
+finally:
+    print("close file")

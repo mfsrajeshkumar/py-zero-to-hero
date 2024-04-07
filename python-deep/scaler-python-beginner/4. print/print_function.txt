@@ -1,0 +1,40 @@
+#####part1 printing multiple values#####
+# Printing multiple values using print function
+
+# Note: you can put multiple values of different types in print function just seperating by comma
+
+print("rajesh")
+print("rajesh", "Lovely", "Mukund", "Divyanshu", 25, 32, 36, 88.90, 90)
+
+#####part2 default sep and end in print#####
+Every object will be seperated by an single space by default
+by default sepeartor is a single white space(sep=" ") and end is a new line (end="\n")
+
+#####part3 changing default seperator in print #####
+Changing default sepeartor
+print("rajesh", "Lovely", "Mukund", "Divyanshu", 25, 32, 36, 88.90, 90, sep=",")
+print("rajesh", 26, sep="->")
+rajesh->26
+print("Rahul", 26, sep="\n")
+Rahul
+26
+print("rajesh", "Lovely", "Mukund", "Divyanshu", 25, 32, 36, 88.90, 90, sep="\n")
+rajesh
+Lovely
+Mukund
+Divyanshu
+25
+32
+36
+88.90
+90
+------------------------------------
+#####part3 changing default end in print #####
+print("raj", 26, end=" ")
+print(24)
+raj 26 24
+
+print("Pooja", 29, sep="\n", end="->")
+print("Rozy", 24)
+Pooja
+29 -> Rozy 24 

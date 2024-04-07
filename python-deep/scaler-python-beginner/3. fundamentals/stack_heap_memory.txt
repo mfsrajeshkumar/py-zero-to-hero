@@ -1,0 +1,13 @@
+Two types of memory in python:
+1. Stack
+2. Heap
+
+variable names are just reference of actual data 
+variable name which is stored in stack memory and data is stored in heap memory
+and later data is identified by crossponding reference name
+(In another langugae this reference is known as pointer)
+--------
+--------
+--------
+--------
+--------

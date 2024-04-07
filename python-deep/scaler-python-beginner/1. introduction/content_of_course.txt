@@ -1,0 +1,32 @@
+Let's Learn:
+-----------
+--> Python from scratch
+--> Write pyhton code
+--> Questions for better understanding
+
+
+Goal of this course:
+------------------------
+--> Understanding of python constructs
+--> You would be able to code in python 
+--> Ready to move with DS & ML or Development
+
+
+# Overall Structure
+We have segregated this course in multiple modules topic wise making it easy for you to learn quickly.
+1. Introduction
+2. Installations
+3. Python Fundamentals
+4. Print function
+5. Operators and Expressions
+6. Control Flow
+7. Loops
+8. Strings
+9. Lists
+10. Tuples
+11. Dictionaries
+12. Sets
+13. Python function
+14. Opps
+15. File Handling
+16. Errors and Exception Handling

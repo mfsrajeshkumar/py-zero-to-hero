@@ -1,0 +1,93 @@
+File handling:
+------------------
+--> A file is a container in a computer system for storing data.
+--> Data is permanently stored
+
+
+Project Level requirement:
+Learn well about excel, csv, pdf file reading and writing (Recommended check important available packages)
+Types of files:
+-------------------
+--> text
+--> binary
+
+Opening  a file:
+----------------
+--> open: returns a file handle
+--> In order to perform any kind of operations on file first we open it
+f = open("name.txt")
+type(f)
+f.closed # Return True if file is closed else False
+f.read() # To read the file
+f.close() # To close the file
+
+
+#### File operations in python######
+Modes of opening a file
+1. 'r': read only
+2. 'w': write only
+3. 'a': appending data at the end of file
+4. 'wt': write text
+5. 'wb': write binary
+6. 'rb': read binary
+7. 'rt': read text
+
+
+f = open("name.txt", "w")
+f.write("I am writable now") 
+# This will return length of characters which will be passed in write functionIn this case 18
+f.close()
+
+##### with open #####
+--> Most common way to perform operation on files
+--> It closes the file after performing operations
+
+with is a context manager (Learn more about context manager)
+with open("name.txt") as f:
+    print(f.read())
+
+f.closed # True
+
+with open("name.txt", "w) as f:
+    f.write("hey i am writable")
+
+#####Writing a file#####
+Writing in a file
+--> You can write both text and binary file
+--> You can either write or append in a file
+
+
+# We are creating new file here
+with open("new.txt", "w") as f:
+    f.write("Hey new file created")
+
+
+# Write in existing file
+with open("new.txt", "w") as f:
+    f.write("This is the updated content of our file \n")
+    f.write("This is a new line")
+
+##### Read #####
+--> using read() method we can read a file 
+--> It opens in read only format
+read(): reads the whole data
+read(l): reads data of length l
+tell(): tells you about the position of file handle
+seek(): it helps to re position your file handle
+readlines(): reads data line by line
+readline(): reads data line by line
+
+##### handling binary file(non-text file) #####
+--> To read binary data we open file in "rt" mode
+--> To write binary data we open file in "wt" mode
+
+
+with open("rj.jpeg", "rb") as f:
+    data = f.read()  # b'..............'
+
+    with open("rj_copy.jpeg", "wb") as d:
+        d.write(data)
+
+##### Append ######
+with open("name.txt", "a") as f:
+    f.write("This is appended data")

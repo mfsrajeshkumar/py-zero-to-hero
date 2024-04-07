@@ -1,0 +1,36 @@
+Q1. What is python?
+--> Python is easy to understand, general-purpose programming language.its design philoosophy 
+    emphasizes readability with its notable use
+
+Developed by Guido van Rossum in 1993.
+
+Advantages of python:
+- Easy to code 
+- Improved productivity
+- Vast library suppport 
+- A lot of carrier options for you 
+- Used almost evrywhere
+
+# Pyhton Kingdom
+--> Youtube is mostly written in python
+--> Majorly used at google 
+--> Alll big market players use it
+
+Netflix, Instagram, Amazon .. etc alla companies are using python.
+
+Youtube:
+---------
+--> Video recommendations
+--> Personalized content
+--> Personalized advertisements
+-- Many more..
+
+Python can be used for:
+--> AI and Machine  Learning
+--> Data analytics
+--> Programming applications
+--> Web Development
+--> Game Development
+Many More...
+
+
