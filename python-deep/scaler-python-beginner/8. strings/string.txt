@@ -1,0 +1,62 @@
+Strings
+--> A string is a sequence of characters
+--> characters can be:
+    > Alphabets (capital and small)
+    > Digits (0-9)
+    > Whitespace(space)
+    > Special characters(@, #, $, ...)
+--> They can be defined using single, double or triple quotes
+
+Ex# 
+"Rahul" == "luhaR"  # False
+
+
+--> So for every character one numeric value is bind 
+For example:
+A -->65    a--> 97
+Z -->90    z--> 122
+
+So these all are known as unicode characters
+
+These are standards
+ASCII
+unicode 
+
+Multiline string you can define using triple quotes 
+
+introduction = """"
+    Hello All!,
+
+    This is Rajesh
+    From Begusarai Bihar,
+    I am a full stack developer .
+"""
+
+##### Ord and Chr #####
+encoding
+a --> 97
+A --> 65
+
+ord() --> It will return  the Unicode code point for that character.
+ord("a") --> 97
+
+chr() --> It will return  the character corresponding to the Unicode code point.
+chr(97) --> 'a'
+
+#####Indexing in a String#####
+String indexing starts from 0 not 1
+
+name = "Rajesh Kumar Yadav"
+
+# accessing character through indexing
+name[2]
+name[-1]
+len(name)
+
+# First character using negative indexing
+size = len(name)
+print(name[-size]) # R
+
+
+##### String Slicing #####
+
