@@ -59,4 +59,215 @@ print(name[-size]) # R
 
 
 ##### String Slicing #####
+In slicing starting point will be included and end point will be excluded
+name[0]
+name[start:end]
+name[0:2]
+
+size = len(name)
+name[0:size]
+
+name[:] bydefault start is  0 and end is length of string and jump is 1
+name[::] by default it takes one step at a time i.e., jump=1
+name[start:end:jump]
+name[::-1] reverse the string
+
+name[:-1] //Rajesh Kumar Yada
+name[1:2:-1] // it will empty string 
+name[-1:0] // empty
+name[-1:0:-1]
+name[-1: -(len(name) + 1): -1]
+
+
+
+##### String Methods 1#####
+> capitalize
+> title
+> upper
+> lower
+> find
+> count
+> index
+> replace
+> split
+> islower
+> isupper
+> isnumeric
+> isalpha
+
+name = "rajesh kumar"
+name.capitalize() # It will not change original name value
+name.title()
+name.upper()
+name.lower()
+name.find("a")
+name.count("a")
+name.index("a")
+name.replace("r", "@")
+name.split() # By default It will split by white space
+
+##### String Methods 2####
+name.isupper() # False
+"R".isupper() # True
+
+name.islower() # False
+"r".islower() # True
+
+"21n".isnumeric() # False
+name.isalpha() # False becuase one character is white space in name
+
+
+#### String  Formatting ####
+name = input()
+age = input()
+
+print("hey my name is", name, ". And my  age is ", age)
+
+## Using format method ##
+print("Hey my name is {} . And my age is {}".format(name, age))
+
+# More advance
+print("Hey my name is {name} . And my age is {age}")
+
+## Using f-string (form of string called as formatted string or f-string) ##  
+name = "Raj"
+age = 25  
+print(f"Hey my name is {name} . And my age is {age}")
+
+
+##### String Concatenation #####
+
+first = input()
+second = input()
+
+print(first + second)
+ 
+"2" + "a" //"2a"
+
+"a" + "a" + "a" //'aaa'
+
+"2" +"2" //'22'
+
+2 + 2 //4
+
+##### Challenge Print Vowels #####
+
+"""
+The quick brown fox jumps over the lazy dog" is an English-language pangram – a sentence that contains all the letters of the alphabet.
+"""
+Print all vowels of a given string
+vowels = ['a', 'e', 'i', 'o', 'u']
+text = "the quick brown fox jumps over the lazy dog"
+text = text.replace(" ","").split("")
+
+for  char in text:
+    # Check if i in this iteration is a vowel
+    if char.lower() in vowels:
+        print(char)
+
+for i in text:
+    # Check if i in this iteration is a vowel
+    if i == 'a' or i == 'e' or i == 'i' or i == 'o' or i == 'u':
+        print(i)
+
+
+##### Challenge Check Palindrome #####
+Challenge: Find if a string is Palindrome
+--> A string is said to be palindrome if the reverse of the string is the same  as the original string
+--> For example, "radar" is a palindrome, but "radix" is not a palindrome.
+
+# Using string slicing 
+print(True if text == text[::-1] else False)
+
+##Challenges
+def set_operation(sent1,sent2):
+    ''' input:sent1,sent2-two sentences taken as inputs
+         output:return the sum of length of unique words.'''
+    
+    # YOUR CODE GOES HERE
+    unique_words1 = []
+    unique_words2 = []
+    for word1 in sent1.split():
+        if word1 not in unique_words1:
+            unique_words1.append(word1)
+    for word2 in sent2.split():
+        if word2 not in unique_words2:
+            unique_words2.append(word2)
+    return len(unique_words1) + len(unique_words2)
+
+
+Q2.
+Similar Substrings
+Problem Description
+You are given two strings, A and B. Two strings, X and Y, are said to be similar if :
+
+Length(X) = Length(Y).
+The frequency of each character in string X should be equal to that of each character in string Y.
+
+String B consists of only lowercase Latin characters, and String A consists of lowercase Latin letters and characters “?”. You can replace the “?” character with any lowercase Latin letter.
+
+Find the number of substrings of string A similar to string B.
+
+For ex: “a?b?c” is similar to “aabcc”, “bcabb”, etc.
+
+
+Problem Constraints
+1 ≤ |A| ≤ 105
+1 ≤ |B| ≤ 105
+
+
+Input Format
+The first argument given is a string, A.
+
+The second argument given is a string, B.
+
+
+
+Output Format
+Return an integer denoting the number of substrings of string A that are similar to string B.
+
+
+
+Example Input
+Input 1:
+
+ A = "bb??x???"      B = "aab"
+Input 2:
+
+ A = "ab?c"          B = "acb"
+
+
+
+Example Output
+Output 1:
+
+ 2
+Output 2:
+
+ 2
+
+
+Example Explanation
+Explanation 1:
+
+We can find two similar substrings in A:
+1) "b??": we can replace both the "?" with "a", to form "baa" which is similar to "aab".
+2) "???": we can replace it with "aab".
+Explanation 2:
+
+We can find two similar substrings in A:
+1) "ab?": we can replace the "?" with "c", to form "abc" which is similar to "acb".
+2) "b?c": we can replace the "?" with "a", to form "bac" which is similar to "acb".
+
+
+
+123456
+class Solution:
+    # @param A : string
+    # @param B : string
+    # @return an integer
+    def solve(self, A, B):
+
+Output Result
+theme-logo
 

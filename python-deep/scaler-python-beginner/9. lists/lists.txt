@@ -1,0 +1,30 @@
+#####Data Structure#####
+--> A data structure is a specialized format for  organizing, processing, retrieving and storing data.
+
+> Want to store data more efficiently?
+
+1. lists
+2. Dict
+3. Set
+4. Tuple
+
+##### Introduction to Lists in Python #####
+1. l = []
+2. l = list()
+
+##### List Slicing  #############
+
+#List Operations#
+
+#Append vs Extend in lists #
+
+
+# Heterogenous lists #
+
+# 2-D lists #
+
+# Iteration in 2D List#
+
+#List Comprehension#
+
+# Challenge: Find Total Population #
