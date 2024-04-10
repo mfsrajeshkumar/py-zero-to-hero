@@ -1,0 +1,162 @@
+--> Like list tuples are also ordered collection of data
+--> Unchangeable
+--> Iterable
+--> Can be heterogenous
+
+
+planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+planets[2] = "Raj"
+type(planets) //list
+planets //["Mercury", "Venus", "Earth", "Raj", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+
+Frozen data: If once this kind of data is getting created then you don't want to chnage later
+
+t = ("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+type(t) // tuple
+
+# indexing
+t[0] //Mercury
+t[-1] //Neptune
+
+t[1:3] //("Venus", "Earth")
+
+t[2] = "Raj" //TypeError: 'tuple' object does not support item assignment
+
+# tuples are immutable(one defined then not chnagable throught its life cycle)
+tuple can also contains hetrogenous type of data
+t = ("rahul", 2, 24.4, True)  // tuple is here just like family with multiple members father, mother, son, daughter
+
+#####How to create a tuple?#####
+#creating a tuple
+t =()
+type(t) // tuplle
+
+t1 = tuple()
+type(t1) //tuple
+
+# Non empty tuple
+t3 = (2)
+type(t3) //int
+
+t4 = (2, ) // By adding a comma you're telling its not just a simple integer object instead of this is a tuple
+
+t5 = ("raj")
+t5// ('r', 'a', 'j')
+
+t = (23, 5)
+len(t) //2
+
+t = ([1, 2], [4, 5])
+
+#####Mutability in tuples#####
+Note: tuples are immutable
+t (2, ,3 ,4)
+t[0] = 7  //TypeError: 'tuple' object does not support item assignment
+
+t = ([1, 3, 4, 5], "raj")
+type(t)
+
+tuple
+
+type(t[0]) //list
+t[0][0] = 45
+
+type(t) //tuple
+
+
+##### Tuple unpacking #####
+a = 3
+b = 4
+c = 5
+d = 1
+print(a, b, c, d)
+3 4 5 1
+
+a, b = 2, 4
+print(a, b) // 2 4
+
+t = (1, 2, 3, 4)
+a, b, c, d = t1print(a, b, c, d)
+1 2 3 4
+
+# This process is kknown is unpacking
+
+##### Tuple operations #####
+> count
+t = (1, 2, ,3 ,4)
+t.count(1) //1
+t.count(45) // 0 if element not in tuple
+
+t.index(1) //0
+
+# iteration
+len will give value only if you are passing any iterable in len function as an argument
+len(t) //4
+
+for i in t:
+    print(i)
+
+# Concatenation
+# +, *
+t = (1, 2, 3, 4)
+t1 = (5, 6)
+
+t3 = t + t1 //(1, 2, 3, 4, 5, 6)
+t4  = t1 * 2 //(2, 4, 6, 8)
+
+# tuple to list and list to tuple
+lst = list(t)
+t1 = tuple(lst)
+
+
+#Challenges#
+Q1.
+tup = (10, 20, 30, 40, 50)
+elem = 30
+def get_index(tup, elem):
+    ''' input:elem-indicates the element in the tuple,tup-indicates the tuple
+         output:Return the index of the element.'''
+    
+    # YOUR CODE GOES HERE
+    if elem in tup:
+        return tup.index(elem)
+    return -1
+
+Q2.
+Divide the tuple
+Problem Description:
+
+Write a program to divide a given tuple into two tuples that contain even and odd indexed elements of the original tuple. Print both these tuples in the given output format.
+
+Note: The input tuple follows 1-based indexing. This means the element at index 0  is treated as having index as 1. 
+
+For example, (9,2,3). The 1-based index of 2 is 2.
+
+Input Format:
+
+The input contains a tuple as an argument to the function.
+Output Format:
+
+Print two tuples one for odd indexed elements and another for even indexed elements in the following format:
+Odd: (....)
+Even: (....)
+Sample Input:
+
+1
+(10, 8, 5, 2, 10, 15, 10, 8, 5, 8, 8, 2)
+Sample Output:
+
+Odd: (10, 5, 10, 10, 5, 8)
+Even: (8, 2, 15, 8, 8, 2)
+def odd_even_split_tuple(tup):
+    ''' input:tup-indicates the tuple
+         output:print two tuples one for even indexed and odd indexed in the given output format'''
+    
+    # YOUR CODE GOES HERE
+    odd = []
+    even = []
+    for idx, num in enumerate(tup, start=1):
+        even.append(num) if (idx % 2 == 0) else odd.append(num)
+
+    print("Odd: ", tuple(odd))
+    print("Even: ", tuple(even))

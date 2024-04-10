@@ -9,22 +9,271 @@
 4. Tuple
 
 ##### Introduction to Lists in Python #####
+-> Ordered collection of data
+-> Lists are mutable type of data structure
+-> It can contain multiple type of data
+-> Lists are changable (Mutable)
+-> Lists are iterable
+
+
+# Creating a list
 1. l = []
 2. l = list()
+3. l1 = [1, 2, 3, 4, 5]
+
+#Accessing a list
+l1[0]
+l1[-len(l1)]
+l1[-1]
+
+#mutability
+id(l1)
+l1[0] = 9
+id(l1)
+
+# iterable?
+for i in l1:
+    print(i)
 
 ##### List Slicing  #############
+l = [2, 3, 5, 7, 9, 4]
+len(l)//6
+l[0:3]//[2,3,5]
+l[::-1]//[4, 9, 7, 5, 3, 2]
+l[5:0] // Empty list []
+l[5:0:-1] //[4, 9,7,5,3,2]
 
-#List Operations#
+##############List Operations#############
+List Inbuilt Methods
+> count
+> index
+> pop
+> remove
+> sort
+> insert
+> append
+> extend
 
-#Append vs Extend in lists #
+count: returns the count of an object
+l1 = [100, 200, 300, 100, 500]
+print(l1.count(100)) //2
+
+index: returns the index of 1st occurence of an object
+l1.index(100) //0
+
+pop: Remove and returns the last element of a list
+l1.pop() #default it removes the last item
+l1.pop(-1) #removes the last item
+l1.pop(1) #removes the second item from left
+
+remove: Removes the given object from our list
+l1.remove(100) #Removes first occurrence of 100
+
+sort: It sorts our list
+l1.sort()
+
+insert: Helps to add an element at a given index
+l1.insert(1,800) #Inserts 800 at 1st position
+
+##############Append vs Extend in lists ##############
+
+append: To add object in the last  of the List
+l = [1, 2, 3]
+l.append(4) //[1, 2, 3, 4]
+l1 = [7, 8, 9]
+l.append(l1) //[1, 2, 3, 4, [7, 8, 9]]
+
+extend: 
+l.extend(l1)//[1, 2, 3, 4, 7, 8, 9]
+
+s = "raj"
+l.extend(s)//[1, 2, 3, 4, 'r', 'a', 'j']
+
+############## Heterogenous lists ##############
+
+# with different datatypes
+l = [2, "rahul", 1.3, True]
 
 
-# Heterogenous lists #
+############## 2-D lists ##############
+l1 = [1, 2, 3]
+l2 = [4, 5, 6]
+l3 = [7, 8, 9]
 
-# 2-D lists #
+l = [l1, l2, l3]
 
-# Iteration in 2D List#
+# Indexing
+l[0]
+l[0][0] //1
 
-#List Comprehension#
+l[1][1] //4
+############## Iteration in 2D List##############
+for i in l:
+    for j in i:
+        print(i)
 
-# Challenge: Find Total Population #
+
+##############List Comprehension##############
+l = []
+for i in range(10):
+    l.append(i)
+print(l)
+
+l = [i for i in range(10)]
+squares = [(i ** 2) for i in range(10)]
+
+############## Challenge: Find Total Population ##############
+--> Given a list of population sensus done by Gol. You need to find the total population.
+--> Each element in the list represents total members in family 
+--> l = [4, 6, 5, 8, 9, 3, 2, 4, 5, 4, 3, 2, 3, 4]
+
+l = [4, 6, 5, 8, 9, 3, 2, 4, 5, 4, 3, 2, 3, 4]
+# access all the elements of this list
+population = 0
+for i in l:
+    # sum them up
+    population += i
+
+print(population)
+
+
+Q1.
+Is It Identity Matrix?
+Problem Description
+
+You are given a N X N square integer matrix A. You have to tell whether A is an identity matrix or not.
+
+Identity matrix is a special square matrix whose main diagonal elements are equal to 1 and all other elements are 0.
+
+class Solution:
+    # @param A : tuple of list of integers
+    # @return an integer
+    def solve(self, A):
+        for idx, list_data in enumerate(A):
+            for lst_idx, data in enumerate(list_data):
+                if (lst_idx == idx):
+                    if(list_data[lst_idx] == 1):
+                        continue
+                    else:
+                        return 0
+                else:
+                    if(list_data[lst_idx] == 0):
+                        continue
+                    else:
+                        return 0
+
+               
+        return 1
+
+Q2.
+Second Largest
+Problem Description
+You are given an integer array A. You have to find the second largest element/value in 
+the array or report that no such element exists.
+
+class Solution:
+    # @param A : list of integers
+    # @return an integer
+    def solve(self, A):
+        if len(A) > 2:
+            sorted_list = sorted(A, reverse=True)
+            for 
+            if (sorted_list[0] != sorted_list[1]):
+                return sorted_list[1]
+            else:
+                return -1
+
+        else:
+            return -1
+
+
+# Correct Solution
+class Solution:
+    # @param A : list of integers
+    # @return an integer
+    def solve(self, A):
+        if len(A) > 2:
+            sorted_list = sorted(A, reverse=True)
+            for i in range(len(sorted_list) - 1):
+                if (sorted_list[i] != sorted_list[i+1]):
+                    return sorted_list[i+1]
+            else:
+                return -1
+
+        else:
+            return -1
+
+Q3. 
+Remove that
+Problem Description
+Write a program to input N numbers array, A from the user and an integer X and print the array by deleting element at specified position X.
+
+Note: The first element is located at position 1, the second element is located at position 2, and so on.
+
+
+Problem Constraints
+2 <= N <= 100
+1 <= A[i] <= 1000
+1 <= X <= N
+
+
+Input Format
+First line is N which means number of elements.
+Second line contains N space separated integers.
+Third line is X position which has to be deleted.
+
+
+Output Format
+N-1 space separated integers of the input array after deleting the element at required position.
+
+
+Example Input
+Input 1:
+5
+2 3 1 4 2
+3
+Input 2:
+2
+4 5
+2
+
+
+Example Output
+Output 1:
+2 3 4 2
+Output 2:
+4
+
+
+Example Explanation
+Explanation 1:
+Clearly after removing the element at position 3 (2 3 1 4 2), the remaining array is 2 3 4 2.
+Explanation 2:
+After removing the element at position 2 (4 5), the remaining array is 4.
+
+
+
+12456738
+def main():
+    number_of_elements = int(input())
+    
+
+    return 0
+
+if __name__ == '__main__':
+    main()
+Output Result
+theme-logo
+def main():
+    number_of_elements = int(input())
+    array = list(map(int, input().split()))
+    position_to_delete = int(input())
+
+    if position_to_delete:
+        array.pop(position_to_delete - 1)
+    print(*array)
+  
+   
+
+if __name__ == '__main__':
+    main()

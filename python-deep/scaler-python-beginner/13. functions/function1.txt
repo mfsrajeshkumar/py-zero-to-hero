@@ -1,0 +1,91 @@
+#####Functions Introduction#####
+#Functions
+> Function is a user defined piece of code. It works only when it's called by the user. 
+It helps in reusability of code and helps in reducing errors in your code. Example: print, range etc..
+
+Helps in reusability of code
+Make code manageable and organized
+
+Functions are of two types:
+    1. User defined 
+    2. Built-in
+
+
+#####Defining a Function######
+def greet():
+    #This is body of the function
+    print("hey, have a good day!!")
+
+
+print(greet) //<function greet at 0x7fe3498d0670>
+
+# Calling a function
+greet()// hey, have a good day!!
+
+
+#####Docstrings#######
+print?
+greet?
+Docstring: <no docstring>
+
+def greet():
+    """
+    This function greets everyone when it is getting called
+    """
+    print("hey, have a good day!!")
+
+
+
+#####Parameter & Arguments#######
+# Parameters:
+> These are place holders in the function
+> When defining them we call them as Parameters
+> When passing the actual value we call them as Arguments.
+
+
+def greet(name):
+    print("hey, how are you!!", name)
+
+greet("rajesh") //hey, how are you!!", rajesh
+
+def add(a, b):
+    c = a + b
+    print(c)
+
+add(2, 3)
+
+#####Return#######
+> A function call ends when return statement is executed.
+> It returns the expression back to the function.
+> The code after return statement are not executed.
+> If there is no return value the function returns None.
+
+# If no return object then it returns NoneType
+
+def func():
+    return 
+
+c = func()
+print(c, type(c))  // None, <class 'NoneType'>
+
+def func():
+    print("Before return")
+    return "raj"
+    print("After return")
+
+#####Return Multiple values#######
+def intro(name, age, hobby):
+    return name, age, hobby
+
+
+name, age, hobby = intro("rahul", 25, "Coding")
+print(name, age, hobby) // rahul, 25, Coding
+
+Note: Multiple return values are coming in a tuple
+a, b = 2, 3
+print(a, b)// 2, 3
+
+#####Scope of  a Variable#######
+
+#####Lambda Function#######
+

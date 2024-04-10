@@ -1,0 +1,121 @@
+#####Intro to sets in Python#####
+> Unique collection
+> Unordered
+> Unindexed
+> Mutable
+
+
+lst = [1, 2, 3, 1, 1] //here 1 is repeating
+
+# Creating a set
+> set()
+> set(iterable)
+
+#empty set
+s = set()
+type(s) // set
+
+# Non Empty set
+s = {1, 2, 3, 1, 2, 4, 5, 1, 2}
+print(s) //{1, 2, 3, 4, 5}
+
+s = set("rahul")
+s// {'a', 'h', 'l', 'u', 'r'}
+
+for i in s:
+    print(i)
+
+
+#####update and Delete Operations#####
+> add: For single element
+> update(iterable)
+
+s = {1, 2, 3, 3, 5, 4, 6}
+s // {1, 2, 3, 4, 5, 6}
+
+s.add(8)
+s.add(8)
+s.add(8)
+s.add(8)
+
+# update
+name = 'raj'
+s.update(name)//{1, 2, 3, 4, 5, 6, 'j', 'a', 'r'}
+
+
+s.pop() // Wil delete randomly any element
+#####Intersection#####.
+> Suppose scaler has two courses available for students: Pyhton and java.
+> You want to find out which students are enrolled in both the Pyhton and java courses. 
+Then you can use the intersection method
+
+# We are taking names instead of unique Ids for ease of understanding
+python = {"lovely", "raj", "pooja", "kajal", "annu"}
+java = {"dvyanshu", "annu", "sweta"}
+python.intersection(java)// annu
+java.intersection(python)// annu
+
+#####Union#####
+> Suppose you wnat to find out which students are enrolled in either the python or the java course
+ or in both. Then you can use the union method
+python.union(java)
+
+#####Difference#####
+> Suppose you want to find out the set of students who have enrolled in the python 
+course but not in java course or vice-versa, then we can use the difference method.
+
+python.difference(java) // who's enrolled only in python not in java
+java.difference(python) // who's enrolled only in java not in python
+
+
+#####Find Unique Words#####
+Challenge: Count number of unique elements in a sentence
+sent = "be the change you wish to see in the world"
+lst = sent.split()
+s = set(sent)
+
+#Final code
+lst = sent.split()
+
+#Convert into set
+s = set(lst)
+print(len(s)) //9
+
+
+############Challemge1##########
+Frequency of unique elements
+Problem Description:
+
+Write a function to print out the frequency of all the unique elements present in a given tuple.
+
+Input Format:
+
+The one input line consists of a tuple.
+Output Format:
+
+Unique elements and their frequencies are expected to be printed as follows:
+unique_element1 : freq1
+unique_element2 : freq2
+.
+.
+Sample Input:
+
+(10, 8, 5, 2, 10, 15, 10, 8, 5, 8, 8, 2)
+Sample Output:
+
+10 : 3
+8 : 4
+5 : 2
+2 : 2
+15 : 1
+
+
+def unique_count(tup):
+    unique_elements = []
+    for i in tup:
+        if i not in unique_elements:
+            unique_elements.append(i)
+    for i in unique_elements:
+        print(i, ":", tup.count(i) )
+====================================
+

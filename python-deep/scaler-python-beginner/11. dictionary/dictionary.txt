@@ -1,0 +1,152 @@
+#####Dictionary#####
+# Introduction to Dictionary
+> Dictionary has key value pair form of data
+> Dictionaries are ordered(python3.7 and above version)
+> Does not support indexing
+> Data can be accessed using key
+
+
+#####Creating Dictionary#####
+# Creating an empty Dictionary
+d = {}
+d1 = dict()
+print(type(d)) // dict
+
+# Creating an non-empty Dictionary
+fruits = {
+    "apple": 120,
+    "mango": 100,
+    "pineapple": 90
+}
+
+type(fruits) //dict
+
+# zip
+name = ["apple", "mango", "oranges"]
+prices = [120, 100, 130]
+zip(key, value)
+
+fruit = dict(zip(name, prices))
+
+#####Accessing Data in Dictionary#####
+# using key
+fruits = {
+    "apple": 120,
+    "mango": 100,
+    "pineapple": 90
+}
+fruits["apple"] //120
+fruits["guava"] //KeyError: 'guava' if key is not present in dictionary
+
+
+# get method to avoid KeyError
+fruits.get("apple") //120
+fruits.get("guava") //If key is not available will return nothing
+fruits.get("guava", "Not available")  //If key is not available then you can set your own value
+fruits.get("guava", 0) 
+
+#####Updating Dictionary#####
+fruits = {
+    "apple": 120,
+    "mango": 100,
+    "pineapple": 90
+}
+
+
+# using key
+fruits["pineapple"] = {"small": 90, "large": 120}
+
+# Updating with new value
+fruits
+
+# Using update method
+new = {"grapes": 120, "oranges": 70, "berry": 140}
+fruits.update(new)
+print(fruits)
+fruits = {
+    "apple": 120,
+    "mango": 100,
+    "pineapple": 90,
+    "grapes": 120, 
+    "oranges": 70, 
+    "berry": 140
+}
+
+#####Deletion Operations in Dictionary#####
+# pop
+# popoitem
+#  del
+
+fruits = {
+    "apple": 120,
+    "mango": 100,
+    "pineapple": 90
+}
+
+# citizenship check
+"grapes" in fruits //False
+
+#pop
+fruits.pop("apple") // 120
+
+#popitem
+fruits.popitem()
+
+#del
+del fruits
+
+#####Iteration in  Dictionary#####
+fruits = {
+    "apple": 120,
+    "mango": 100,
+    "pineapple": 90,
+    "grapes": 120
+}
+for i in fruits:
+    print(i) // Will print key value
+    print(i, fruits[i]) # print corrosponding value
+
+# using dict.items()
+for key, value in fruits.items():
+    print(key, value)
+fruits.items()
+
+#####More Dictionary Methods#####
+> keys
+> values
+> items
+
+dict_keys = fruits.keys()
+dict_values = fruits.values()
+dict_items = fruits.items()
+
+#####Find Frequency of Characters in a String#####
+Challenge:
+Take an input and find the freq of each letter and return the letter and their freq
+Ex# "Rahul janghu"
+"R": 1 
+"a": 2
+"h": 2
+"u": 2
+"l": 1
+" ": 1
+"j": 1
+"n": 1
+"g": 1
+
+d = {"r": 1, "r":3}
+d //{"r": 3} // Uniqueness of key
+
+name = input()
+freq = {}
+for i in name:
+    # Check for presence
+    if i not in freq:
+         freq[i] = 1 
+    # If present increment the freq by factor 1
+    else:
+        freq[i] += 1 
+print(freq)
+
+
+#####Challenges#####
