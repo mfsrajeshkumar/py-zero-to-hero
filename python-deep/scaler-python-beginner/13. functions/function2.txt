@@ -1,23 +1,332 @@
 #####Challenge: Print Even Numbers#######
+1. Write a Python function to print the even numbers from a given list.
+input = [1, 2, 4, 3, 5, 6]
+output = 2 4 6
 
+def filter_even_numbers(lst):
+    # Create an empty list to store the even numbers
+    even_numbers = []
+    # Iterate through each number in the input list
+    for num in lst:
+        # Check if the current number is divisible by 2 (i.e., it's even)
+        if num % 2 == 0:
+            # If it is indeed even, add it to the 'even_numbers' list
+            # Print in a single line
+            print(num, end = " ")
+            even_numbers.append(num)
+    return even_numbers
+
+print(*filter_even_numbers([1, 2, 4, 3, 5, 6])) 
 
 #####Challenge: Return List with Unique Numbers#######
+2. Write a python function that takes a list and returns a new list with unique elements of the first list
+input = [1, 2, 3, 1, 2, 4]
+output = [1, 2, 3, 4]
+def remove_duplicates(lst):
+"""Returns a new list containing only the unique elements from the input list."""
+    # Create an empty set to store the unique elements
+    unique_elements = set()
+    # Create an empty list to store the final result
+    result = []
+    # Iterate through each element in the input list
+    for elem in lst:
+        # Add the element to the set of unique elements
+        unique_elements.add(elem)
+    # Now that we have all the unique elements in the set, convert them back into a list
+    # and assign the result to the variable 'result'.
+    result = list(unique_elements)
+    return result
+
+remove_duplicates([1,  2, 3, 1,  2, 4])
+
+def unique_elements(lst):
+    """A more concise version of the 'remove_duplicates' function."""
+    return list(set(lst))
+
+def unique_elements(lst):
+    """A more concise version of the 'remove_duplicates' function."""
+    unique_numbers = []
+    for i in lst:
+        if not i in unique_numbers:
+            unique_numbers.append(i)
+    return unique_numbers
+
+
 
 
 #####Argument vs parameters in Functions#######
 
+> parameters: The values we pass while defining a function
+> arguments: The actual values of we pass when calling a function
+
+# This name variable is known as parameter
+def func(name):
+    print("hey my name is", name)
+
+# calling the function
+The actual value is known as argument
+func("raj") // Here raj is an argument to the func function
+
 #####Positional Arguments#######
+> The value you pass when calling a function are matched according to their positions
+>> def add(a , b):
+...     c=a+b
+...     return c
+>>> add(5,6)
+11
+
+
+so 5 will be matched with a and 6 will be matched  with b
 
 #####Default Arguments#######
+> Giving default values to the parameters
+> For these parameters passing value in arguments is optional
+
+# print?
+def intro(name, hobby="reading"):
+    print("my name is ", name,)
+    print("I love ",hobby)
+
+intro("Raj") // here "reading" is the default value for hobby so it'll print only Raj
+
+intro("Raj","coding") // now it'll print both names
 
 #####Default follows non-default#######
+# Positioning of default and non-default arguments
+def intro(name="Rahul", hobby):
+    print("my name is ", name,)
+    print("I love ",hobby)
 
+When will try to execute this function will raise SyntaxError
+SyntaxError: non-default argument follows default argument
+
+Note: non-default argumns should always come before default arguments.
 
 ####Arbitary Arguments#####
+> When number of values you want to pass is not known
+> Like we pass multiple values in print function
+> The values are being stored in tuple
+
+*args
+print(1,2,3,4,5)
+This will give output (1,2,3,4,5)
+But if we use *args then it will store all values in tuple like this
+(1,2,3,4,5)
+
+def test(*args):
+    print(args)
+    print(type(args))
+
+    # iterate and print
+    for i in args:
+        print(i, end=" ")
+test(1,2,3,4,5, "raj", 12.4)
+(1,2,3,4,5, "raj", 12.4)
+Output : <class 'tuple'>
+2 3 4 raj 12.4
+
 
 
 ####Keyword Arguments#####
+> variable  number of keyword arguments
+>   it stores the data in dictionary format
 
+**kwargs
+
+def intro(**kwargs):
+    print(kwargs)
+    print(type(kwargs))
+    for key, value in kwargs.items():
+        print(f"{key} = {value}")
+
+intro(name="Raj", age=20, city="Delhi")
+{'age': 20, 'city': 'Delhi', 'name': 'Raj'} 
+<class 'dict'> 
+name = Raj 
+age = 20 
+city = Delhi
+
+def mix(a, b, c, age=25, *args, **kwargs):
+    print(a, b, c)
+    print(age)
+    print(args)
+    print(kwargs)
+
+mix(2)
+TypeError: mix() missing 2 required positional argument: 'b' and 'c'
+mix(2, 4, 5)
+2 4 5
+25 
+()
+{}
+
+mix(2, 4, 5, 45)
+2 4 5 
+45
+()
+{}
+
+This will accomodate first 3 positional arguments (a=2, b=4, c=5) and then default argumnets age = 45 
+ther Arbitary argumnets *args = (6, 7, 8, 9) and then keyword arguments  **kwargs = {"name" = "raj", "apple" = 10}
+mix(2, 4, 5, 45, 6, 7, 8, 9, name = "raj", apple = 10)
+2 4 5
+45
+(6, 7, 8, 9)
+{"name" = "raj", "apple" = 10}
+
+Note always *args will come before **kwargs in function definition
+
+Challenge:
+1. def circle_area(r):
+    ans=None
+    '''input: r = A numerical value as radius
+       output: Return the area of circle as ans upto 2 decimal places'''
+    # YOUR CODE GOES HERE
+    ans = round(((22/7) * (r**2)), 2)
+    return ans
+
+def circle_area(r):
+    ans=None
+    '''input: r = A numerical value as radius
+       output: Return the area of circle as ans upto 2 decimal places'''
+    # YOUR CODE GOES HERE
+    ans = round((3.14159 * (r**2)), 2)
+    return ans
+
+
+
+2. 
+Time to end Corona
+Problem Description
+Given three integers, A, B and C. You have to find the number of days it will take to reach zero cases of Corona in a city.
+
+A - Average cases recovered in a day of the corona.
+B - Number of new cases of corona daily.
+C - Current active cases of the corona.
+
+Return the minimum number of days it will take to reach 0 active cases of Covid.
+
+Problem Constraints
+
+1 <= B < A <= 5000
+1 <= C <= 1000
+
+
+Input Format
+
+The first argument will be integer A, which denotes the recovered cases in a day.
+The second argument will be integer B, which denotes the new cases in a day.
+The third argument will be integer C, which denotes the currently active cases.
+
+
+Output Format
+
+Return an integer which denotes the minimum days to reach 0 cases.
+
+
+Example Input
+
+Input 1:
+A = 5
+B = 3
+C = 1
+Input 2:
+A = 4
+B = 3
+C = 2
+
+
+Example Output
+
+Output 1:
+1
+Output 2:
+2
+
+
+Example Explanation
+
+Explanation 1:
+At the end of Day 1, 3 new cases of Covid will arise. 
+So, total cases at the end of Day-1 before recovery will be 1 + 3 = 4.
+And after recovery there will be (4 - 5) = -1 cases, since there cannot be negative number of cases
+the cases would be 0 at the end of Day 1
+Explanation 2:
+At the end of Day 1, before recovery, cases will be 2 + 3 = 5.
+After recovery 5 - 4 = 1 case
+At the end of Day 2 before recovery,cases will be 1 + 3 = 4.
+After recovery 4 - 4 = 0 case
+
+
+
+1234567
+class Solution:
+    # @param A : integer
+    # @param B : integer
+    # @param C : integer
+    # @return an integer
+    def solve(self, A, B, C):
+        pass
+
+class Solution:
+    # @param A : integer
+    # @param B : integer
+    # @param C : integer
+    # @return an integer
+    def solve(self, A, B, C):
+        active_cases = C
+
+        day_count = 0
+        while active_cases > 0:
+            day_count += 1
+            print(day_count)
+            active_cases += B - A
+
+        return day_count
+
+
+
+
+Celsius to Fahrenheit MCQ
+What is the output of the code?
+
+def convert(t):
+    return t*9/5 + 32
+
+print(convert(20))
+
+Note: The Question is with respect to Python 3.0 version.
+65
+65.0
+68.0
+68
+
+Arguments Check
+Given the following function fun1()
+
+
+
+Select all the syntactically correct function calls to this function.
+
+fun1("Mohit", age=23) C
+fun1(age =23, name="Mohit") C
+fun1(name="Mohit", 23)
+fun1(23, "Mohit") C
+
+
+Calculate Interest
+Considering the Interest() function:
+
+def Interest(p,c,t=2,r=0.09):
+  return p*t*r
+Which of the following function calls are legal?
+
+Interest(p=1000,c=5)
+Interest(r=0.05,5000,3) SyntaxError: non-keyword arg after keyword arg
+
+Interest(500,t=2,r=0.05) TypeError: Interest() takes at least 2 arguments (3 given)
+
+Interest(c=4,r=0.12,p=5000) # Oreder doesn't matter if you have passed all the values  as named argument
 
 
 

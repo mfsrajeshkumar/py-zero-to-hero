@@ -1,5 +1,13 @@
 #####intro to OOPS in Python#####
-
+> Object oriented Programming
+> the principles of OOPs are based on 4 Pillars apart from Class and Objects
+> A class has attributes and behaviour
+1. Class
+2. Object
+3. Inheritance
+4. Polymorphism
+5. Abstraction
+6. Encapsulation
 
 
 ######Class & Object in Python#####

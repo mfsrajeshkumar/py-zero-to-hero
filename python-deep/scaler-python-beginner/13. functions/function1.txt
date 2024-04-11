@@ -86,6 +86,94 @@ a, b = 2, 3
 print(a, b)// 2, 3
 
 #####Scope of  a Variable#######
+> There are twoo scope of a variable: Global and Local
+> Global variable can be used anywhere in a program
+> Local variable can only be used locally inside a program(function)
+
+# a can be used anywhere in the program
+a = 5
+def func():
+    x = 9
+    print(a)
+
+
+So here a is a global and x is a local variable
+
+a = 5
+def func():
+    # x is a local variable to this function
+    X = 3
+    print(x)
+
+func()
+print(a)
+#print(x)
+
+a = 5
+def func():
+    a = 20
+    print(a)
+
+func()
+print(a)
+20 
+5
+
+
+a = 5
+def func():
+    global a
+    a = 20
+    print(a)
+
+print(a)
+func()
+print(a)
+5
+20
+20
 
 #####Lambda Function#######
+> These are mainly used when we need nameless functions for short period of time.
 
+def add(a, b):
+    return a + b
+
+add(3, 4) //7
+
+lambda (Parameters) :  Expression
+
+lambda a, b: a + b // It will return a function object 
+
+To call lambda function we have 2 ways:
+(lambda a, b: a + b)(3, 4) //7
+func = lambda a, b: a + b
+type(func) // function
+func(3, 4) //7
+
+def larger(a, b):
+    if a > b:
+        return  a
+    else:
+        return  b
+
+larger(10, 20) # 10
+
+# Using lambda function
+lambda a, b: a if a > b else b 
+(lambda a, b: a if a > b else b )(2, 3) //3
+larger = lambda a, b: a if a > b else b 
+larger(62, 7) // 62
+
+lst = [(12, 56), (2, 4), (5, 3)]
+lst.sort() // sorted according 0th index of every element
+lst // [(2, 4), (5, 3), (12, 56) ]
+
+def k(x):
+    return x[1]
+lst.sort(key = k) // sort based on second value in each tuple
+lst // [(5, 3), (2, 4), (12,  56) ]
+
+# using lambda function
+lst.sort(key = lambda x: x[1])
+lst // [(5, 3), (2, 4), (12,  56) ]
