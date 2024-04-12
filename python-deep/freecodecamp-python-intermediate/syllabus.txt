@@ -1,0 +1,36 @@
+#####Syllabus#####
+--------------------------------------------------------------------------
+Intro
+> This course you can take after beginner level of understanding in Python3
+> After completion of this course you will have intermediate understanding of python
+
+Course Description:
+Lists
+Tuples
+Dictionaries
+Sets
+Strings
+Collections
+Itertools
+Lambda Functions
+Exceptions and Errors
+Logging
+JSON
+Random Numbers
+Decorators
+Generators
+Threading vs Multiprocessing
+Multithreading
+Multiprocessing
+Function Arguments
+The Asterisk (*) Operator
+Shallow vs Deep Copying
+Context Managers
+------------------------------------------------------------------------------
+
+Course Reference:
+https://www.classcentral.com/classroom/freecodecamp-intermediate-python-programming-course-57822
+
+https://www.classcentral.com/course/dive-deep-into-python-260122
+
+https://www.classcentral.com/course/codecademy-learn-intermediate-python-3-59935
