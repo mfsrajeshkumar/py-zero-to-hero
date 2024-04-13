@@ -1,0 +1,41 @@
+git stash list                                  //List out all the stashes
+git stash clear                                 //Removing all stashed files
+git stash drop <stash_index>
+git stash drop stash@{0}
+
+---------------------------------------------------------------------------------------------------------
+In Git, you can use the git stash command to temporarily save changes that you have made in your working directory but haven't committed. This allows you to switch branches or work on other tasks without committing the changes you have made. The stashed changes can be applied back later when you are ready.
+
+Here's how to use git stash:
+
+Stash Changes:
+
+To stash changes in your working directory, use the command:
+git stash
+This command will save your changes and revert your working directory to the state of the last commit.
+Stash Untracked Files:
+
+If you want to stash changes along with untracked files, use:
+git stash -u
+Stash Ignoring Untracked Files:
+
+If you want to stash changes while ignoring untracked files, use:
+git stash -k
+List Stashes:
+
+To see a list of all stashes, use:
+    git stash list
+
+Apply a Stash:
+To apply a stash back to your working directory, use:
+    git stash apply <stash_index>
+
+Replace <stash_index> with the index of the stash you want to apply, or leave it blank to apply the most recent stash.
+
+Pop a Stash:
+To apply a stash and remove it from the list of stashes, use:
+    git stash pop <stash_index>
+
+Replace <stash_index> with the index of the stash you want to pop, or leave it blank to pop the most recent stash.
+By using the git stash command, you can efficiently manage changes in your working directory and keep your commit history clean.
+---------------------------------------------------------------------------------------------------------
