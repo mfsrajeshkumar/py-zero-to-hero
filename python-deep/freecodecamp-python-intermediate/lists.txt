@@ -1,0 +1,82 @@
+> List is collection data types 
+Lists: ordered, mutable, allows duplicate elements
+mylist = ["banana", "cherry", "apple"]
+print(mylist)
+
+all_type_of_elements = ["raj", True, 120, 1.56]
+
+# positive indexing
+mylist[0]//banana
+mylist[1]//cherry
+
+# Negative indexing
+mylist[-1]//apple
+mylist[-2]//cherry
+
+# Membership check
+if "apple" in mylist:
+    print("yes")
+else:
+    print("No")
+
+len(mylist) //3 Number of elements in the List
+mylist.append("lemon") //["banana", "cherry", "apple", "lemon"]
+
+# insert at specific method
+mylist.insert(1, "grape") // [“banana”, “grape”, “cherry”, “apple”,”lemon”]
+
+# remove element using pop() method
+element = mylist.pop() # it will remove and return last element
+print(element) # apple
+
+# remove element using pop() with index argument
+element = mylist.pop(1) 
+
+mylist.clear() // clear all elements
+mylist.reverse()
+
+numbers = [4, 3, 1, -1, -5, 10]
+mylist.sort()  //This will change  original list
+
+new_list = sorted(numbers) # This won't change original list
+print(new_list)
+
+mylist = [0] * 5  //[0, 0, 0, 0, 0]
+
+mylist2 = [1, 2, 3, 4, 5] 
+new_list = mylist + mylist2
+new_list // [0, 0, 0, 0, 0, 1, 2, 3, 4, 5]
+
+
+# Slicing is a best way to get sub parts from your list
+mylist = [1, 2, 3, 4, 5, 6, 7,8, 9]
+mylist[1:5]
+print(a)[2, 3, 4, 5]
+
+[start:stop:jump]
+
+[0:len(lst):1]
+[::-1] // Reverse a list
+
+list_org = ["banana", "cherry", "apple"]
+
+lst_cpy = list_org //Becuase of this assigment both lists are refering tpo the same address in memory  so any changes made on one side will reflect onlist_copy = list_org[:]
+
+lst_cpy.append("lemon")
+
+print(list_cpy) //["banana", "cherry", "apple", "lemon"]
+print(list_org) //["banana", "cherry", "apple", "lemon"]
+
+So avoid this we have three options to make actual Copying
+Method 1 : Use slicing
+   lst_cpy=list_org[:]
+Method 2 : use list() function
+    lst_cpy = list(list_org)
+Method 3 : using copy method on list
+    lst_cpy = list_org.copy()
+
+
+# Fast and elegant way to create a new list from existing list in just one line
+
+numbers = [1, 2, 3, 4, 5, 6]
+square_of_numbers = [num * num for num in numbers]

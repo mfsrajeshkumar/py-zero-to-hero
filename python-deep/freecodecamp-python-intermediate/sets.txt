@@ -1,0 +1,110 @@
+> Sets is also a colllection data type which is unorderd, mutable and no duplicates .
+myset = {1, 2, 3} //{1, 2, 3}
+myset1 = {1, 2, 3, 3, 1} // {}{1, 2, 3}
+
+# Empty set
+myset = set()
+
+myset.add(1)
+myset.add(2)
+myset.add(3)
+
+
+myset.remove(3)
+myset.discard(3)
+
+myset.clear()
+myset.pop()
+
+for x in myset:
+    print(x)
+
+if 2 in myset:
+    print("yes)
+
+
+# Unions
+odds = {1, 3, 5, 7, 9}
+evens = {0, 2, 4, 6, 8}
+primes = {2, 3, 5, 7}
+
+Union: Just combining unique elements from both Sets
+Intersection: Just  keeping the common elements between two sets
+Difference : Elements that are only present in one of the sets
+Symmetric Difference : All the elements that are not in both sets
+
+u = odds.union(evens) //{0, 1, 2, 3, 4, 5, 6, 7, 8, 9} # combines both 2 sets without duplications
+i = odds.intersection(evens) //set() # keeps only the common elements
+i1 = odds.intersection(primes) //{3, 5, 7}
+i2 = evens.intersection(primes) //{2}
+
+Note: Intersection only takes which will found in both sets
+
+What are examples of union and intersection? For a union and an intersection example, 
+use the set B = {1, 2, 3, 4, 5, 6} and the set D = {3, 5, 7, 9, 10}. 
+
+#Union# Will combine all the common elements from both sets in to one set without  any duplicates.
+The union of sets B and D is the set {1, 2, 3, 4, 5, 6, 7, 9, 10}.
+
+#Intersection# Will combine all the elements from both sets which will be not common  or duplicate.
+The intersection of sets B and D is the set {3, 5}.
+
+#Difference: Will return all the elements of first set which is not in second set.
+setA = {1, 2, 3, 4, 5, 6, 7, 8 ,9}
+setB = {1, 2, 3, 10, 11, 12}
+
+di = setA.difference(setB) # {4, 5, 6, 7,  8, 9}
+d1 = setB.difference(setA) # {10, 11, 12}
+# Symmetric difference: Method will return all the elements from setA and setB but not the elements  which are common in both sets.
+
+#Difference of sets examples#
+If A = {1, 2, 3, 4, 5, 6} and B = {3, 4, 5, 6, 7, 8}, then find A – B and B – A. A – B = {1, 2} since the elements 1, 2 are there in A but not in B. Similarly, B – A = {7, 8}, since the elements 7 and 8 belong to B and not to A.
+
+#Symmetric Difference#
+For an example of the symmetric difference, we will consider the sets A = {1,2,3,4,5} and B = {2,4,6}. The symmetric difference between these sets is {1,3,5,6}.
+
+
+setA.update(setB)  //{1, 2, 3, 4, 5 ,6, 7, 8, 9, 10, 11, 12}
+setA.intersection_update(setB) // {1, 2, 3}
+setA.difference_update(setB) //{4, 5, 6, 7, 8 ,9}
+steA.symmetric_difference_update(setB) //{4, 5, 6, 7, 8, 9, 10, 11, 12}
+
+
+setA = {1, 2, 3, 4, 5, 6}
+setB = {1, 2, 3}
+setC = {7, 8}
+# Subset: All the elements of our first set is also persent in second set 
+print (setA.issubset(setB)) //False
+print (setB.issubset(setA)) //True
+
+# Superset: All the element of our second set is present in our first set
+print (setB.issuperset(setA))// False
+print (setA.issuperset(setB))// False
+
+# disjoint:  Two sets are said to be disjoint when they have no common element
+print(setA.isdisjoint(setB)) // False
+print(setA.isdisjoint(setC)) // True
+
+
+#Copying sets
+
+setB = setA // This simple assignment both points to the same set so be careful here , you only copy the Reference
+setB.add(7)
+print(setB) //{1, 2, 3, 4, 5, 6, 7}
+print(setA) //{1, 2, 3, 4, 5, 6, 7}
+
+Now if you want to make an actual copy, then you have to use .copy Method
+setB = setA.copy()
+setB.add(7)
+print(setB) //{1, 2, 3, 4, 5, 6, 7}
+print(setA) //{1, 2, 3, 4, 5, 6}
+
+# using set Method
+setB = set(setA)
+
+
+#Frozenset# is a also collection data type  like set but it's immutable i.e once created we can not change its value.
+Frozenset is similar to set in Python, except that frozensets are immutable, which implies that once generated, elements from the frozenset cannot be added or removed. This function accepts any iterable object as input and transforms it into an immutable object.
+
+a = frozenset([1, 2, 3, 4])
+print()

@@ -1,0 +1,158 @@
+# Strings
+ordered, immutable, text representation
+> String is an ordered, immutable collection data type that is used for text representation
+> Most used data type in python
+> String can be created using single('') or double quote("")
+> Triple quote is used for multi line string or documentation
+
+my_string = 'Hello World'
+str1 = "Hi all"
+my_str = """Hello \
+World"""
+
+
+Escapr character: '\' Escaping backslash character
+str2 = 'I\'m a programmer'
+str2 = "I'm a programmer"
+
+
+#accessing characters using indexing and slicing
+
+# Concatenation
+greeting = "Hello"
+name = "Tom"
+
+sentence = greeting + " " + name
+
+# Looping
+greeting = "Hello"
+for chr  in greeting:
+    print(chr)
+H 
+e
+l
+l
+o
+
+#Membership Check
+if 'e' in greeting:
+    print('yes')
+else:
+    print('no')
+
+
+if 'ell' in greeting:
+    print('yes')
+else:
+    print('no')
+
+
+# A string with whitespace
+mystring = '    Hello India    '
+Get rid of this white space we can use a method strip()
+mystring =  mystring.strip() // This method will not change the original  string.
+
+#Change every characters to upper case
+print(mystring.upper())
+
+#Change every characters to lower case
+print(mystring.lower())
+
+
+print(mystring.startswith('Hello'))// True
+print(mystring.startswith('World'))// False
+
+print(mystring.endswith('World'))// True
+print(mystring.endswith('Hello'))// False
+
+print(mystring.find('o'))   # It returns first occurrence position of substring if it is present otherwise -1
+                            # In Python, indexing starts from 0
+
+print(len(mystring))               # Returns length of the string
+
+print(mystring.count('pp'))
+
+print(mystring.replace('world' , 'India'))     # Replaces all occurrences of one word with another
+
+words = mystring.split()                         # Splits the string into list of words based on spaces
+print(words)
+
+sentence = "I love coding"
+word_list = sentence.split(" ")                # Split the sentence into list of words using split() method
+print(word_list)
+
+first_name = word_list[0]
+last_name = word_list[-1]                      # Accessing elements in list by index
+
+full_name = last_name + ", " + first_name       # Concatenating two strings
+
+print(full_name)
+
+Bydefault default argument/delimeter for split method is a white space
+
+Convert a list  back to string using join() method
+
+from timeit import default_timer as timer
+# Very useful
+result = " ".join(word_list)
+
+my_list = ['a'] * 6
+print(my_list)
+
+#bad python code as string is immutable type so it will create a new  string and append old value also
+#mystring += "Python"
+start = timer()
+my_string = ''
+for i in my_string:
+    my_string += i
+stop =  timer()
+print((stop - start)/10**9)   # Time taken by loop
+print(my_string)
+
+# good
+start = timer()
+my_string = "".join(my_list)
+stop =  timer()
+print((stop - start)/10**9)
+print(my_string)
+
+
+# Formating string
+# %, .format(), f-strings
+
+var = "Tom"
+my_string = "the variable is %s" % var
+print(my_string)
+
+var = 3
+my_string = "the variable is %d" % var
+
+var = 3.123444
+my_string = "the variable is %f" % var
+
+Bydefault 6 digits  after the decimal point are printed, but you can specify more or less using "%.2f"
+my_string = "the variable is %.2f" % var
+
+
+# Using format method
+var = "Tom"
+my_string = "the variable is {}".format(var)
+print(my_string)
+
+
+var = 13.549870
+my_string = "the variable is {:.2f}".format(var) // :.2f will give you 2 digits after decimal point
+print(my_string)
+
+name = "Tom"
+age = 26
+
+my_string = "My name is {} and I am {} yrs old.".format(name, age) 
+print(my_string)
+
+# f-string
+my_string = f"My name is {name} and I am {age} yrs old."
+
+Inside f-string we can also perform mathematical operation
+my_string = f"My name is {name} and I am {age * 2} yrs old."
+

@@ -1,0 +1,71 @@
+> The Collections module implements special container data types, and provides alternatives with some additional functionality  compared to general built in containers, like dictionaries, list or tuples
+
+So we will be talking about five different types from the collections
+# collections: Counter, namedtuple, OrderedDict, defaultdict, deque
+
+from collections import Counter
+
+a = "aaaaabbbbccc"
+my_counter = Counter(a)
+print(my_counter) # Counter({'a': 5, 'b':  4, 'c': 3})
+print(my_counter.keys()) 
+print(my_counter.values()) 
+print(my_counter.items()) 
+
+print(my_counter.most_common(1)) 
+print(my_counter.most_common(1)[0][0]) 
+
+print(list(my_counter.elements()))
+
+
+
+from collections import namedtuple
+Point = namedtuple('Point', 'x, y')
+
+pt = Point(1, -4)
+print(pt)  # Point(x=1, y=-4)
+print(pt.x) # 1
+print(pt.y) # -4
+
+# But when to use named tuple
+
+
+from collections  import OrderedDict
+
+od = OrderedDict()
+od['a'] = 1
+od['b'] = 2
+od['c'] = 3
+od['d'] = 4
+
+
+from collections import defaultdict
+
+d = defaultdict(int) # d = defaultdict(float) #0.0  # d = defaultdict(list)  #[]
+d['a'] = 1
+d['b'] = 2
+
+print(d['c']) #0
+
+
+
+from collections import deque
+d = deque()
+
+d.append(1)
+d.append(2)
+
+d.appendleft(3)
+d.pop()
+
+d.popleft()
+
+
+d.clear()
+
+d.extend([4, 5, 6])
+d.extendleft([4, 5, 6]) //[6, 5, 4, 3, 1, 2]
+
+d.rotate(1) # Rotate to the right
+d.rotate(2) # Rotate to the right
+d.rotate(-1) # Rotate to the left
