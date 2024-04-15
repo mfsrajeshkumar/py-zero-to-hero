@@ -1,0 +1,48 @@
+> Context managers are great tool for resource management, they allow you to reallocate and release resource precisely when you want to.
+
+
+well known example is with open statement
+
+To open a file in write mode:
+with open('notes.txt', 'w') as file:
+    file.write('some todo...')
+
+with is a context manager here which is responsible to close automatically once the file opertaions will be completed.
+Even though if any exception  occurs within the block, the file will be closed automatically when execution leaves the block.
+
+# The above code can be written in this way also
+file = open('notes.txt', 'w')
+try:
+    file.write('some todo...')
+finally:
+    file.close()
+
+
+open and close database connection
+
+# 1st way
+from threading import Lock
+lock = Lock()
+
+lock.acquire()
+#....
+lock.release()
+
+#2nd way
+with lock:
+    pass
+
+
+# Own context manager:
+class ManagedFile:
+    def __init__(self, filename):
+        self.filename = filename
+        self.file = None
+
+    def __enter__(self):
+        self.file = open(self.filename)
+        return self.file
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if self.file is not None:
+            self.file.close()
